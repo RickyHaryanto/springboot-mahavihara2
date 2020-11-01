@@ -71,6 +71,7 @@ public class UserRegistrationController {
     @RequestParam("nama") String nama,@RequestParam("bod") String bod, @RequestParam("alamat") String alamat, @RequestParam("email") String email,
     @RequestParam("qiudao") String qiudao,  @RequestParam("kota") String kota,
     @RequestParam("password") String password, @RequestParam("confirmPassword") String confirmPassword,
+    @RequestParam("jabatan") String jabatan,
     ModelMap modelMap
     ){
 
@@ -98,6 +99,7 @@ public class UserRegistrationController {
         userDto.setKota(kota);
         userDto.setPassword(password);
         userDto.setConfirmPassword(confirmPassword);
+        userDto.setJabatan(jabatan);
        
         userService.save(userDto);
 

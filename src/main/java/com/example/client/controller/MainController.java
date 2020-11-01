@@ -29,19 +29,52 @@ public class MainController {
     public String root() {
         try{
 
-            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-            boolean hasUserRole = authentication.getAuthorities().stream()
+            Authentication authentication7 = SecurityContextHolder.getContext().getAuthentication();
+            boolean hasUserRole7 = authentication7.getAuthorities().stream()
                       .anyMatch(r -> r.getAuthority().equals("Umat"));
-            if (hasUserRole == true){
+            if (hasUserRole7 == true){
                 return "home";
             }
 
-            Authentication authentication2 = SecurityContextHolder.getContext().getAuthentication();
-            boolean hasUserRole2 = authentication2.getAuthorities().stream()
+            Authentication authentication8 = SecurityContextHolder.getContext().getAuthentication();
+            boolean hasUserRole8 = authentication8.getAuthorities().stream()
                       .anyMatch(r -> r.getAuthority().equals("User"));
-            if (hasUserRole == true){
+            if (hasUserRole8 == true){
                 return "welcome";
             }
+
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            boolean hasUserRole = authentication.getAuthorities().stream()
+                      .anyMatch(r -> r.getAuthority().equals("Admin Umum"));
+            if (hasUserRole == true){
+                return "/admin/index";
+            }
+
+
+            Authentication authentication2 = SecurityContextHolder.getContext().getAuthentication();
+            boolean hasUserRole2 = authentication2.getAuthorities().stream()
+                      .anyMatch(r -> r.getAuthority().equals("Admin Market"));
+            if (hasUserRole2 == true){
+                return "/admin/index_market";
+            }
+
+
+            Authentication authentication3 = SecurityContextHolder.getContext().getAuthentication();
+            boolean hasUserRole3 = authentication3.getAuthorities().stream()
+                      .anyMatch(r -> r.getAuthority().equals("Admin Sekolah Minggu"));
+            if (hasUserRole3 == true){
+                return "/admin/index_sm";
+            }
+
+
+            Authentication authentication4 = SecurityContextHolder.getContext().getAuthentication();
+            boolean hasUserRole4 = authentication4.getAuthorities().stream()
+                      .anyMatch(r -> r.getAuthority().equals("Admin Event"));
+            if (hasUserRole4 == true){
+                return "/admin/index_event";
+            }
+
+
                    
         }
         catch(Exception e){
@@ -88,6 +121,12 @@ public class MainController {
     public String logout(Model model,HttpSession session) {
         SecurityContextHolder.getContext().setAuthentication(null);
         return "login";
+    }
+
+    @GetMapping("/admin/logout.html")
+    public String logoutadin(Model model,HttpSession session) {
+        SecurityContextHolder.getContext().setAuthentication(null);
+        return "/admin/login";
     }
 
     //@RequestMapping("/sw.js")

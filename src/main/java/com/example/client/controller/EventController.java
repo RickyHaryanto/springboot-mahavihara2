@@ -68,6 +68,9 @@ public class EventController {
 		mav.addObject("event", event);
 		return mav;
 	}
+
+
+
 @RequestMapping("/googlecalendar.html")
 	public String viewgc(Model model) {
 		

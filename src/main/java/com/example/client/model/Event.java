@@ -14,17 +14,20 @@ public class Event {
 	private String event_keterangan;
 	private String event_tanggal;
 	private String event_waktu;
+	private String event_foto;
+	
 	
 	
 	public Event() {
 	}
 
-	protected Event(String event_judul,String event_keterangan,String event_tanggal,String event_waktu) {
+	protected Event(String event_judul,String event_keterangan,String event_tanggal,String event_waktu,String event_foto) {
 		super();
 		this.event_judul = event_judul;
 		this.event_keterangan = event_keterangan;
 		this.event_tanggal = event_tanggal;
 		this.event_waktu = event_waktu;
+		this.event_foto= event_foto;
 	}
 
 	@Id
@@ -72,5 +75,13 @@ public class Event {
 
 	public void setEvent_waktu(String event_waktu) {
 		this.event_waktu = event_waktu;
+	}
+
+	public String getEvent_foto() {
+		return event_foto;
+	}
+
+	public void setEvent_foto(String event_foto) {
+		this.event_foto = event_foto;
 	}
 }

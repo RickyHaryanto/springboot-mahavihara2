@@ -229,7 +229,7 @@
                         <td th:text="${diklat[2]}">Tanggal Start</td>
                         <td th:text="${diklat[3]}">Tanggal End</td>
                         <td th:text="${diklat[7]}">Tanggal End</td>
-                        <td><img th:src="${'http://localhost:4000/'+ diklat[4]}" height="70", width="70"></td>
+                        <td><img th:src="${diklat[4]}" height="70", width="70"></td>
                         <td th:text="${diklat[5]}">Keterangan</td>
                         <td th:text="${diklat[6]}">Status Diklat</td>
                         <td><a th:href="@{'/pendaftaran_diklat.html/'} + ${diklat[0]}">Daftar Diklat</a></td>
@@ -266,7 +266,7 @@
                         <td th:text="${diklat[2]}">Tanggal Start</td>
                         <td th:text="${diklat[3]}">Tanggal End</td>
                         <td th:text="${diklat[7]}">Tanggal End</td>
-                        <td><img th:src="${'http://localhost:4000/'+ diklat[4]}" height="70", width="70"></td>
+                        <td><img th:src="${diklat[4]}" height="70", width="70"></td>
                         <td th:text="${diklat[5]}">Keterangan</td>
                     
                       </tr>

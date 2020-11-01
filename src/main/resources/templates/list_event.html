@@ -215,6 +215,10 @@
                         <th scope="col">Tanggal Event</th>
                         <th scope="col">Isi</th>
                         <th scope="col">Waktu</th>
+                        <th scope="col">Foto</th>
+                        
+                        <th scope="col">Action</th>
+                        
                       </tr>
                     </thead>
                     <tbody>
@@ -224,6 +228,9 @@
                         <td th:text="${event.event_tanggal}">Tanggal Start</td>
                         <td th:text="${event.event_keterangan}">Tanggal End</td>
                         <td th:text="${event.event_waktu}">Tanggal End</td>
+                        <td><img th:src= "${event.event_foto}" height="70", width="70"/></td>
+                       
+                        <td><a th:href="@{'http://www.facebook.com/sharer.php?u=https://springboot-test.herokuapp.com/'}+${event.event_foto}">Share</a></td>
                       </tr>
                     </tbody>
                   </table>

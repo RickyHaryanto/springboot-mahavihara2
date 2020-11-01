@@ -38,9 +38,9 @@ public class UserServiceImpl implements UserService {
         user.setQiudao(registration.getQiudao());
         user.setPassword(passwordEncoder.encode(registration.getPassword()));
         user.setKota(registration.getKota());
-        user.setStatus("Tidak Aktif");
+        user.setStatus("Aktif");
         user.setStatusBerita("Tidak Aktif");
-        user.setRoles(Arrays.asList(new Role("Umat")));
+        user.setRoles(Arrays.asList(new Role(registration.getJabatan())));
         return userRepository.save(user);
     }
 

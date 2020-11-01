@@ -18,11 +18,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private AdminUserService adminuserService;
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
                     .antMatchers(
+                            "/admin/login**",
+                            "/admin/registration**",
                             "/registration**",
                             "/index**",
                             "/kebaktian_user**",
