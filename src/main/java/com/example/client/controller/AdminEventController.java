@@ -84,7 +84,7 @@ public class AdminEventController {
 		Event event = new Event();
 		model.addAttribute("event", event);
 		currentID=0;
-		return "/admin/add_event";
+		return "/admin/add_event.html";
     }
     
 	@RequestMapping("/admin/edit_event.html/{event_id}")
