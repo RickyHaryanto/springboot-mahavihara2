@@ -46,9 +46,9 @@ public class AdminUserRegistrationController {
         return new UserRegistrationDto();
     }
 
-    @RequestMapping(value = "/adminregistration.html") 
+    @RequestMapping(value = "/adminregistration") 
     public String showRegistrationForm(Model model) {
-        return "/adminregistration.html";
+        return "/adminregistration";
     }
 
     
